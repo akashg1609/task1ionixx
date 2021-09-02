@@ -1,0 +1,73 @@
+import java.util.*;
+
+class Address{
+    private String Zipcode;
+    public Address(String zipcode){
+        this.Zipcode = zipcode;
+    }
+    public String getZipcode(){
+        return Zipcode;
+    }
+}
+class MobileNumber{
+    private String number;
+    public MobileNumber(String number){
+        this.number = number;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+}
+class definations{
+    public String name;
+    public int age;
+    public Address address;
+    public MobileNumber mobileNumber;
+    public definations(String name,int age,Address address,MobileNumber mobileNumber){
+        this.name = name;
+        this.age = age;
+        this.address = address;
+        this.mobileNumber = mobileNumber;
+    }
+    public String getName(){
+        return name;
+    }
+    public int getAge(){
+        return age;
+    }
+    public Address getAddress(){
+        return address;
+    }
+    public MobileNumber getMobileNumber(){
+        return mobileNumber;
+    }
+}
+public class Task1 {
+    public static void main(String[] args){
+        
+        definations def2 = new definations("Akash",
+                21, new Address("Salem"),
+                new MobileNumber("1557223522"));
+        definations def1 = new definations("Aakash",
+                20, new Address("padikattu Thurai, Karur"),
+                new MobileNumber("8072011083"));
+        definations def3 = new definations("Karurpasamy",
+                19, new Address("vella Kovil"),
+                new MobileNumber("22532351455"));
+        definations def4 = new definations("Saran",
+                21, new Address("Namakkal"),
+                new MobileNumber("2252325154"));
+        definations def5 = new definations("Arvind",
+                20, new Address("vengamedu, Karur"),
+                new MobileNumber("5552265552"));
+       List<definations> data = Arrays.asList(def1,def2,def3,def4,def5);
+       data.forEach(i->{
+           System.out.print(i.getName()+" "+i.getAge()+" "+i.getAddress().getZipcode()+" "+i.getMobileNumber().getNumber()+"\n");
+       });
+
+
+
+
+    }
+}
